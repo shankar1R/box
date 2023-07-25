@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "149884457025",
+    "project_id": "footwear-abf3c",
+    "storage_bucket": "footwear-abf3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149884457025:android:92f3accd32f240ceb736c0",
+        "android_client_info": {
+          "package_name": "com.example.box"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149884457025-p8t6oj7lklboolln23n0ops7bemnrnsp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDagmzhXTDYvkCQOBja-031Wct6plQridQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149884457025-p8t6oj7lklboolln23n0ops7bemnrnsp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149884457025:android:cef5415896bb8e46b736c0",
+        "android_client_info": {
+          "package_name": "com.example.smart_footwearmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149884457025-p8t6oj7lklboolln23n0ops7bemnrnsp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDagmzhXTDYvkCQOBja-031Wct6plQridQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149884457025-p8t6oj7lklboolln23n0ops7bemnrnsp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
