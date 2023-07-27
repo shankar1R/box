@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -16,10 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Asset Box Handler'),
     );
   }
 }
@@ -34,67 +36,105 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final DatabaseReference databaseReference = FirebaseDatabase.instance.ref();
-
-  void readData() {
-    databaseReference
-        .child('https://footwear-abf3c-default-rtdb.firebaseio.com/LED_STATUS')
-        .get()
-        .then((DataSnapshot snapshot) {
-      // DataSnapshot contains the data from the database
-      print('Value: ${snapshot.value}');
-    }).catchError((error) {
-      // Handle the error if any
-      print('Error: $error');
-    });
-  }
-
-  void writeData() {
-    databaseReference
-        .child('https://footwear-abf3c-default-rtdb.firebaseio.com/LED_STATUS')
-        .set('ON')
-        .then((_) {
-      print('Data written successfully.');
-    }).catchError((error) {
-      // Handle the error if any
-      print('Error: $error');
-    });
-  }
-
+  String value = "";
+ String status="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Click On OPEN to Get Your Assets',
+            const Text("OPEN TO GET YOUR BELONGINGS"),
+            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.green),
+                textStyle:
+                    MaterialStateProperty.all(const TextStyle(color: Colors.white)),
+              ),
+              onPressed: () async {
+                try {
+                  value = await WriteOPEN("ON");
+                  print("Value $value");
+                } catch (e) {
+                  print("e: $e");
+                }
+              },
+              child: const Text("OPEN"),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             ElevatedButton(
-              onPressed: writeData,
-              style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 12, 83, 14), // Background color
-                onPrimary: Colors.white, // Foreground color (text color)
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.green),
+                textStyle:
+                    MaterialStateProperty.all(const TextStyle(color: Colors.white)),
               ),
-              child: Text("OPEN"),
+              onPressed: () async {
+                try {
+                  value = await WriteOPEN("OFF");
+                  print("Value $value");
+                } catch (e) {
+                  print("e: $e");
+                }
+              },
+              child: const Text("CLOSE"),
             ),
-            SizedBox(width: 20),
+            const SizedBox(height: 20,),
+            
             ElevatedButton(
-              onPressed: readData,
-              style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 5, 46, 135), // Background color
-                onPrimary: Colors.white, // Foreground color (text color)
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 60, 158, 228)),
+                textStyle:
+                    MaterialStateProperty.all(const TextStyle(color: Colors.white)),
               ),
-              child: Text("READ STATUS"),
+              onPressed: () async {
+                try {
+                  status = await ReadStatus("STATUS");
+                  print("Value $status");
+                } catch (e) {
+                  print("e: $e");
+                }
+              },
+              child: const Text("READ STATUS"),
             ),
+            Text("STATUS: $status")
           ],
         ),
       ),
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  Future<String> WriteOPEN(String value) async {
+    // Create a reference to the Firebase Realtime Database.
+    final databaseRef = FirebaseDatabase.instance.ref();
+
+    // Create a child node in the database.
+    final childRef = databaseRef.child('STATUS');
+
+    // Set the value of the child node.
+    await childRef.set(value);
+    return "SUCCESS";
+  }
+  
+  Future<String> ReadStatus(String s) async {
+    // Create a reference to the Firebase Realtime Database.
+    final databaseRef = FirebaseDatabase.instance.ref();
+
+    // Read the data once.
+    DatabaseEvent event = await databaseRef.child(s).once();
+    setState(() {
+      status = event.snapshot.value.toString();
+    });
+
+    // Print the data of the snapshot.
+    print(event.snapshot.value); //
+
+    return status;
   }
 }

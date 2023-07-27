@@ -1,63 +1,41 @@
 {
   "project_info": {
-    "project_number": "149884457025",
-    "project_id": "footwear-abf3c",
-    "storage_bucket": "footwear-abf3c.appspot.com"
+    "project_number": "342082692023",
+    "project_id": "firebox-7fc2a",
+    "storage_bucket": "firebox-7fc2a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:149884457025:android:92f3accd32f240ceb736c0",
+        "mobilesdk_app_id": "1:342082692023:android:81b1cb953957eaee11fe32",
         "android_client_info": {
           "package_name": "com.example.box"
         }
       },
       "oauth_client": [
         {
-          "client_id": "149884457025-p8t6oj7lklboolln23n0ops7bemnrnsp.apps.googleusercontent.com",
+          "client_id": "342082692023-d514hjj230f08bf83r6nepviupf547k5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDagmzhXTDYvkCQOBja-031Wct6plQridQ"
+          "current_key": "AIzaSyCl4UGOigTXY5pss0vB7sOrcNmpSYvsNQg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "149884457025-p8t6oj7lklboolln23n0ops7bemnrnsp.apps.googleusercontent.com",
+              "client_id": "342082692023-d514hjj230f08bf83r6nepviupf547k5.apps.googleusercontent.com",
               "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:149884457025:android:cef5415896bb8e46b736c0",
-        "android_client_info": {
-          "package_name": "com.example.smart_footwearmanagement"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "149884457025-p8t6oj7lklboolln23n0ops7bemnrnsp.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDagmzhXTDYvkCQOBja-031Wct6plQridQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
+            },
             {
-              "client_id": "149884457025-p8t6oj7lklboolln23n0ops7bemnrnsp.apps.googleusercontent.com",
-              "client_type": 3
+              "client_id": "342082692023-o6sii08miqbla3at8dbn4v1eetuns5qq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.box"
+              }
             }
           ]
         }
