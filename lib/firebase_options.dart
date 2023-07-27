@@ -44,42 +44,44 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCXFdNKuKW7g9exBMIyMN4ZSsfrjrIkB0g',
-    appId: '1:342082692023:web:c4926624c6556a6f11fe32',
-    messagingSenderId: '342082692023',
-    projectId: 'firebox-7fc2a',
-    databaseURL: 'https://firebox-7fc2a-default-rtdb.firebaseio.com/',
-    authDomain: 'firebox-7fc2a.firebaseapp.com',
-    storageBucket: 'firebox-7fc2a.appspot.com',
-    measurementId: 'G-3FP1SY0WHY',
+    apiKey: 'AIzaSyBfj44SHl6nKOihyceSGZF8baxFdy4XJFY',
+    appId: '1:149884457025:web:e5c890cf89ec6625b736c0',
+    messagingSenderId: '149884457025',
+    projectId: 'footwear-abf3c',
+    authDomain: 'footwear-abf3c.firebaseapp.com',
+    databaseURL: 'https://footwear-abf3c-default-rtdb.firebaseio.com',
+    storageBucket: 'footwear-abf3c.appspot.com',
+    measurementId: 'G-SYWMSWTJ0T',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCl4UGOigTXY5pss0vB7sOrcNmpSYvsNQg',
-    appId: '1:342082692023:android:81b1cb953957eaee11fe32',
-    messagingSenderId: '342082692023',
-    databaseURL: 'https://firebox-7fc2a-default-rtdb.firebaseio.com/',
-    projectId: 'firebox-7fc2a',
-    storageBucket: 'firebox-7fc2a.appspot.com',
+    apiKey: 'AIzaSyDagmzhXTDYvkCQOBja-031Wct6plQridQ',
+    appId: '1:149884457025:android:92f3accd32f240ceb736c0',
+    messagingSenderId: '149884457025',
+    projectId: 'footwear-abf3c',
+    databaseURL: 'https://footwear-abf3c-default-rtdb.firebaseio.com',
+    storageBucket: 'footwear-abf3c.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAcC007X8Vm3l7OsLgmYI5-tW78e1Xgk3g',
-    appId: '1:342082692023:ios:5fbbd82e2cde1eab11fe32',
-    messagingSenderId: '342082692023',
-    projectId: 'firebox-7fc2a',
-    storageBucket: 'firebox-7fc2a.appspot.com',
-    iosClientId: '342082692023-o6sii08miqbla3at8dbn4v1eetuns5qq.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDtObpkwaHyvtvDEQ83UBIgfCQXEqsQNcU',
+    appId: '1:149884457025:ios:a62c5a5b23a2135fb736c0',
+    messagingSenderId: '149884457025',
+    projectId: 'footwear-abf3c',
+    databaseURL: 'https://footwear-abf3c-default-rtdb.firebaseio.com',
+    storageBucket: 'footwear-abf3c.appspot.com',
+    iosClientId: '149884457025-d33q8gsn2ivf96879r9u00nn86bf5nrg.apps.googleusercontent.com',
     iosBundleId: 'com.example.box',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAcC007X8Vm3l7OsLgmYI5-tW78e1Xgk3g',
-    appId: '1:342082692023:ios:b76381eeba3fb40b11fe32',
-    messagingSenderId: '342082692023',
-    projectId: 'firebox-7fc2a',
-    storageBucket: 'firebox-7fc2a.appspot.com',
-    iosClientId: '342082692023-v221fbv3s5v0dqqbmkrf3k8ckjbkiqd7.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDtObpkwaHyvtvDEQ83UBIgfCQXEqsQNcU',
+    appId: '1:149884457025:ios:cb857a3d9886915cb736c0',
+    messagingSenderId: '149884457025',
+    projectId: 'footwear-abf3c',
+    databaseURL: 'https://footwear-abf3c-default-rtdb.firebaseio.com',
+    storageBucket: 'footwear-abf3c.appspot.com',
+    iosClientId: '149884457025-eu82v97c60bictfsq0eqfpf9k55g5lc3.apps.googleusercontent.com',
     iosBundleId: 'com.example.box.RunnerTests',
   );
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+// import 'firebase_options.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     name: "firebox-1",
-    options: DefaultFirebaseOptions.currentPlatform,
+    // options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
 }
@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               onPressed: () async {
                 try {
-                  status = await ReadStatus("LED_STATUS");
+                  status = await ReadStatus("STATUS");
                   print("Value $status");
                 } catch (e) {
                   print("e: $e");
@@ -134,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final databaseRef = FirebaseDatabase.instance.ref();
 
     // Create a child node in the database.
-    final childRef = databaseRef.child('LED_STATUS');
+    final childRef = databaseRef.child('STATUS');
 
     // Set the value of the child node.
     await childRef.set(value);
