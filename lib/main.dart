@@ -5,8 +5,7 @@ import 'package:firebase_database/firebase_database.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    name: "firebox-1",
+  await Firebase.initializeApp(name: "BoxApp",
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
@@ -131,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<String> WriteOPEN(String value) async {
     // Create a reference to the Firebase Realtime Database.
+        await Firebase.initializeApp();
     final databaseRef = FirebaseDatabase.instance.ref();
 
     // Create a child node in the database.
@@ -143,6 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
   
   Future<String> ReadStatus(String s) async {
     // Create a reference to the Firebase Realtime Database.
+         await Firebase.initializeApp();
     final databaseRef = FirebaseDatabase.instance.ref();
 
     // Read the data once.
